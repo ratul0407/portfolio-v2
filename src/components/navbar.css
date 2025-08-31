@@ -1,0 +1,29 @@
+.li {
+  position: relative;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  border-radius: 1rem;
+}
+
+.li .active::after {
+  content: "";
+  height: 5px;
+  width: 5px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.li:hover::after {
+  content: "";
+  height: 5px;
+  width: 5px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
