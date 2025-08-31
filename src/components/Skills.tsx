@@ -13,6 +13,7 @@ import {
 } from "react-icons/si";
 import { IoLogoFirebase } from "react-icons/io5";
 import { BiLogoPostgresql } from "react-icons/bi";
+import MagneticButton from "./MagneticButton";
 
 type TabType = "frontend" | "backend" | "database" | "utility";
 
@@ -107,9 +108,11 @@ export default function TechTabs() {
         className="flex flex-wrap gap-6 justify-center"
       >
         {techStack[activeTab].map((tech) => (
-          <HoverIcon key={tech.name} name={tech.name}>
-            {tech.icon}
-          </HoverIcon>
+          <MagneticButton>
+            <HoverIcon key={tech.name} name={tech.name}>
+              {tech.icon}
+            </HoverIcon>
+          </MagneticButton>
         ))}
       </motion.div>
     </section>
