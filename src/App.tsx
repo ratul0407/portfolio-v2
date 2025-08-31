@@ -1,11 +1,13 @@
 import About from "./components/About";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import ScrollIndicator from "./components/ScrollIndicator";
 import Skills from "./components/Skills";
 
 function App() {
   return (
     <div>
+      <ScrollIndicator />
       <Navbar />
       <div className="min-h-screen w-full bg-black relative">
         {/* Vercel Grid */}

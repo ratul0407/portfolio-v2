@@ -1,12 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type React from "react";
 import { motion } from "motion/react";
 import { useRef, useState } from "react";
 const MagneticButton = ({ children }: { children: React.ReactNode }) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const onMouseMove = (e) => {
+  const onMouseMove = (e: any) => {
     const { clientX, clientY } = e;
+    if (!ref.current) return;
     const { width, height, left, top } = ref.current.getBoundingClientRect();
     const x = clientX - (left + width / 2);
     const y = clientY - (top + height / 2);
