@@ -107,8 +107,8 @@ export default function TechTabs() {
         transition={{ duration: 0.4, ease: "easeOut" }}
         className="flex flex-wrap gap-6 justify-center"
       >
-        {techStack[activeTab].map((tech) => (
-          <MagneticButton>
+        {techStack[activeTab].map((tech, index) => (
+          <MagneticButton key={index}>
             <HoverIcon key={tech.name} name={tech.name}>
               {tech.icon}
             </HoverIcon>

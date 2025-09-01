@@ -11,7 +11,7 @@ const projects = [
     title: "PlantLife",
     description: "E-commerce site made for the modern world",
     image: plantlifeImg,
-    liveLink: "https://example.com/project1",
+    liveLink: "https://rplantlife.netlify.app",
     detailsLink: "/projects/1",
   },
   {
@@ -19,7 +19,7 @@ const projects = [
     title: "EParcel",
     description: "A Parcel delivery system to make life easier",
     image: parcelImg,
-    liveLink: "https://example.com/project2",
+    liveLink: "https://parcel-delivery-frontend.vercel.app/",
     detailsLink: "/projects/2",
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     title: "Study Collab",
     description: "A course selling platform.",
     image: studyCollab,
-    liveLink: "https://example.com/project3",
+    liveLink: "https://bistro-boss-86657.web.app/",
     detailsLink: "/projects/3",
   },
 ];
@@ -105,21 +105,6 @@ export default function ProjectsSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* All projects button */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="text-center mt-24"
-        >
-          <Link
-            to="/projects"
-            className="text-emerald-400 hover:text-emerald-300 font-semibold inline-flex items-center gap-2"
-          >
-            View All Projects →
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

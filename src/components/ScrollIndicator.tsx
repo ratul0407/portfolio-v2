@@ -20,7 +20,7 @@ export default function ScrollIndicator() {
   return (
     <div className="fixed top-0 left-0 w-full h-1.5 z-50 bg-gray-300 dark:bg-gray-700">
       <motion.div
-        className="h-1.5 bg-blue-500 "
+        className="h-1.5 bg-white "
         style={{ width: `${scrollPercent}%` }}
         transition={{ ease: "easeOut", duration: 0.1 }}
       />

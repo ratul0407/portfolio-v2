@@ -4,13 +4,7 @@
 import { motion, type Variants } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import emailjs from "@emailjs/browser";
-import {
-  LuMail,
-  LuPhone,
-  LuGithub,
-  LuLinkedin,
-  LuTwitter,
-} from "react-icons/lu";
+import { LuMail, LuPhone, LuGithub, LuLinkedin } from "react-icons/lu";
 import { useRef } from "react";
 import { toast } from "sonner";
 
@@ -108,11 +102,11 @@ const Footer = () => {
         <div className="mt-12 space-y-4">
           <div className="flex justify-center items-center gap-3 text-gray-300">
             <LuMail className="w-5 h-5 text-blue-400" />
-            <span>ratul@example.com</span>
+            <span>rajaulislamratul12@gmail.com</span>
           </div>
           <div className="flex justify-center items-center gap-3 text-gray-300">
             <LuPhone className="w-5 h-5 text-green-400" />
-            <span>+880 123 456 7890</span>
+            <span>+880 1983411249</span>
           </div>
         </div>
 
@@ -123,7 +117,7 @@ const Footer = () => {
         >
           <li>
             <a
-              href="https://github.com/"
+              href="https://github.com/ratul0407  "
               target="_blank"
               className="hover:text-blue-400 transition-colors"
             >
@@ -132,20 +126,11 @@ const Footer = () => {
           </li>
           <li>
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/ratul0407"
               target="_blank"
               className="hover:text-blue-400 transition-colors"
             >
               <LuLinkedin className="w-6 h-6" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://twitter.com/"
-              target="_blank"
-              className="hover:text-blue-400 transition-colors"
-            >
-              <LuTwitter className="w-6 h-6" />
             </a>
           </li>
         </motion.ul>

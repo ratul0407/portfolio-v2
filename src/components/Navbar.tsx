@@ -45,7 +45,6 @@ const Navbar = () => {
       if (el) observer.observe(el);
     });
 
-    // 👇 manual fix for top of page
     const handleScroll = () => {
       if (window.scrollY === 0) {
         setActive("home");
@@ -53,7 +52,7 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    console.log(window.scrollY, window.innerHeight);
+
     return () => {
       observer.disconnect();
       window.removeEventListener("scroll", handleScroll);
@@ -74,8 +73,8 @@ const Navbar = () => {
 
         <div className="hidden lg:block z-50 ">
           <ul className="flex items-center gap-6">
-            {navItems.map((item) => (
-              <MagneticButton>
+            {navItems.map((item, index) => (
+              <MagneticButton key={index}>
                 <li className="li">
                   <a
                     href={`#${item.path}`}
