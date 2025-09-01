@@ -7,6 +7,7 @@ import ScrollIndicator from "./components/ScrollIndicator";
 import Skills from "./components/Skills";
 import { AnimatePresence } from "motion/react";
 import Preloader from "./components/preloader/PreLoader";
+import Footer from "./components/Footer";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -43,12 +44,13 @@ function App() {
         />
         {/* Your Content/Components */}
         <div className="relative min-h-screen flex flex-col text-white font-poppins">
-          <Hero />
+          {!isLoading && <Hero />}
         </div>
       </div>
       <About />
       <Skills />
       <Projects />
+      <Footer />
     </div>
   );
 }

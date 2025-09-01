@@ -43,7 +43,8 @@ export default function About() {
       variants={container}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }} // animate when 30% visible, only once
+      viewport={{ once: true, amount: 0.3 }}
+      // transition={{ duration: 0.6 }}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl items-center">
         {/* LEFT: Text */}

@@ -9,6 +9,7 @@ export default function Hero() {
       transition: {
         duration: 0.8,
         ease: "easeOut" as const,
+        delay: 1.5,
       },
     },
   };
@@ -19,7 +20,7 @@ export default function Hero() {
       opacity: 1,
       y: 0,
       transition: {
-        delay: i * 0.1,
+        delay: i * 0.3,
         duration: 0.5,
       },
     }),
@@ -54,7 +55,7 @@ export default function Hero() {
         transition={{ delay: 1, duration: 0.6 }}
         className="text-lg text-gray-500"
       >
-        Full-Stack Developer • MERN • Next.js • Web Enthusiast
+        Full-Stack Developer • MERN • React.js • Web Enthusiast
       </motion.p>
     </motion.div>
   );

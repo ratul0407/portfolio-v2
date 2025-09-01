@@ -81,7 +81,7 @@ export default function TechTabs() {
     >
       {/* Tabs */}
       <h3 className="text-4xl md:text-5xl font-bold mb-8">My SKills</h3>
-      <div className="flex gap-3 mb-12">
+      <div className="grid grid-cols-3 items-center justify-center sm:grid-cols-4  gap-3 mb-12">
         {(["frontend", "backend", "database", "utility"] as TabType[]).map(
           (tab) => (
             <button

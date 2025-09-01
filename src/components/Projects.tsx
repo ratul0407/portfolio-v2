@@ -1,74 +1,125 @@
+"use client";
 import { motion } from "motion/react";
-
+import { Link } from "react-router";
+import plantlifeImg from "../assets/images/plantlife.png";
+import parcelImg from "../assets/images/parcel.png";
+import demoImg from "../assets/images/demo.png";
+import { RiExternalLinkFill } from "react-icons/ri";
 const projects = [
   {
-    title: "Project One",
-    summary: "A short summary about project one. Explain what it does.",
-    image: "/projects/project1.png",
-    link: "#",
+    id: 1,
+    title: "PlantLife",
+    description: "E-commerce site made for the modern world",
+    image: plantlifeImg,
+    liveLink: "https://example.com/project1",
+    detailsLink: "/projects/1",
   },
   {
-    title: "Project Two",
-    summary: "A short summary about project two. Highlight its features.",
-    image: "/projects/project2.png",
-    link: "#",
+    id: 2,
+    title: "EParcel",
+    description: "A Parcel delivery system to make life easier",
+    image: parcelImg,
+    liveLink: "https://example.com/project2",
+    detailsLink: "/projects/2",
   },
   {
-    title: "Project Three",
-    summary: "A short summary about project three. Explain tech used.",
-    image: "/projects/project3.png",
-    link: "#",
+    id: 3,
+    title: "Study Collab",
+    description: "A course selling platform.",
+    image: demoImg,
+    liveLink: "https://example.com/project3",
+    detailsLink: "/projects/3",
   },
 ];
 
-export default function Projects() {
+const fadeIn = (direction: "left" | "right") => {
+  return {
+    hidden: { opacity: 0, x: direction === "left" ? -80 : 80 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+};
+
+export default function ProjectsSection() {
   return (
-    <section
-      id="projects"
-      className="min-h-screen py-20 px-6 md:px-20 bg-black text-white"
-    >
-      <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-        My <span className="text-indigo-500">Projects</span>
-      </h2>
+    <section id="projects" className="py-20 bg-black text-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-bold text-center mb-16"
+        >
+          Featured Projects
+        </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-        {projects.map((project, index) => (
-          <motion.div
-            key={project.title}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }} // trigger once, when 30% visible
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            className="bg-gray-900 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
-          >
-            {/* Image */}
-            <div className="overflow-hidden">
-              <motion.img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover rounded-t-2xl"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.5 }}
-              />
-            </div>
-
-            {/* Content */}
-            <div className="p-6 flex flex-col justify-between h-48">
-              <div>
-                <h3 className="text-2xl font-semibold mb-3">{project.title}</h3>
-                <p className="text-gray-300 text-sm">{project.summary}</p>
-              </div>
-
-              <motion.a
-                href={project.link}
-                className="mt-4 inline-block px-5 py-2 bg-indigo-500 text-white rounded-full font-semibold text-sm shadow-md hover:bg-indigo-600 hover:shadow-xl transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
+        <div className="flex flex-col gap-32">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
+              className={`grid md:grid-cols-2 gap-12 items-center ${
+                index % 2 === 1 ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              {/* Image */}
+              <motion.div
+                variants={fadeIn(index % 2 === 0 ? "right" : "left")}
+                className="overflow-hidden rounded-2xl shadow-lg"
               >
-                Project Details
-              </motion.a>
-            </div>
-          </motion.div>
-        ))}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </motion.div>
+
+              {/* Text */}
+              <motion.div
+                variants={fadeIn(index % 2 === 0 ? "left" : "right")}
+                className="space-y-6"
+              >
+                <h3 className="text-2xl font-semibold">{project.title}</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex gap-4 items-center">
+                  <Link to={project.detailsLink}>
+                    <button className="bg-white text-black p-2 rounded-lg hover:text-white hover:bg-black  cursor-pointer hover:border-white border border-white">
+                      View Details
+                    </button>
+                  </Link>
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="px-5 py-2 rounded-xl border border-gray-400 hover:bg-gray-800 transition ">
+                      <RiExternalLinkFill />
+                    </button>
+                  </a>
+                </div>
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* All projects button */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="text-center mt-24"
+        >
+          <Link
+            to="/projects"
+            className="text-emerald-400 hover:text-emerald-300 font-semibold inline-flex items-center gap-2"
+          >
+            View All Projects →
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

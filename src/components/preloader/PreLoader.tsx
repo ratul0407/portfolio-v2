@@ -1,7 +1,7 @@
 import "./preloader.css";
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
-const opacity = {
+import { motion, type Variants } from "motion/react";
+const opacity: Variants = {
   initial: {
     opacity: 0,
   },
@@ -11,7 +11,7 @@ const opacity = {
   },
 };
 
-const slideUp = {
+const slideUp: Variants = {
   initial: {
     top: 0,
   },
@@ -49,7 +49,7 @@ export default function Index() {
     dimension.height
   } Q${dimension.width / 2} ${dimension.height} 0 ${dimension.height}  L0 0`;
 
-  const curve = {
+  const curve: Variants = {
     initial: {
       d: initialPath,
       transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
