@@ -8,6 +8,7 @@ import Skills from "./components/Skills";
 import { AnimatePresence } from "motion/react";
 import Preloader from "./components/preloader/PreLoader";
 import Footer from "./components/Footer";
+import BlogsComponent from "./components/BlogsComponent";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -51,6 +52,7 @@ function App() {
       <About />
       <Skills />
       <Projects />
+      <BlogsComponent />
       <Footer />
     </div>
   );

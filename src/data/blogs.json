@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Basic Usage of Framer Motion",
+    "slug": "basic-framer-motion",
+    "readTime": "5 min",
+    "date": "2025-09-01",
+    "summary": "Learn how to animate components using Framer Motion in React.",
+    "sections": [
+      {
+        "subtitle": "Introduction",
+        "content": "Framer Motion is a powerful library for animations in React. You can animate components easily using the motion component."
+      },
+      {
+        "subtitle": "Getting Started",
+        "content": "Install Framer Motion using npm or yarn: npm install framer-motion. Import { motion } from 'framer-motion' and replace your divs with motion.div."
+      },
+      {
+        "subtitle": "Basic Animation Example",
+        "content": "You can add simple fade-in animation using initial, animate and exit props."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Setting up React Router in React App",
+    "slug": "setup-react-router",
+    "readTime": "6 min",
+    "date": "2025-08-28",
+    "summary": "Step-by-step guide to setting up React Router in your React project.",
+    "sections": [
+      {
+        "subtitle": "Installation",
+        "content": "Install React Router using npm: npm install react-router-dom."
+      },
+      {
+        "subtitle": "Basic Setup",
+        "content": "Wrap your app in BrowserRouter and define Routes with Route components."
+      },
+      {
+        "subtitle": "Navigating Between Pages",
+        "content": "Use the Link component to navigate between routes without refreshing the page."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "How JavaScript Promises Work",
+    "slug": "javascript-promises",
+    "readTime": "7 min",
+    "date": "2025-08-25",
+    "summary": "Understand JavaScript promises and how to handle asynchronous operations.",
+    "sections": [
+      {
+        "subtitle": "What is a Promise?",
+        "content": "A Promise represents the eventual completion (or failure) of an asynchronous operation and its resulting value."
+      },
+      {
+        "subtitle": "Creating a Promise",
+        "content": "You can create a promise using new Promise((resolve, reject) => {...})."
+      },
+      {
+        "subtitle": "Handling Promises",
+        "content": "Use .then(), .catch(), and .finally() to handle the resolved or rejected promise."
+      }
+    ]
+  }
+]
