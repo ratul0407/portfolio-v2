@@ -1,7 +1,19 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion, AnimatePresence } from "motion/react";
 import { IoMenu } from "react-icons/io5";
 
-export const MobileNavbar = ({ isOpen, setIsOpen, navItems, active }) => {
+interface IProps {
+  isOpen: boolean;
+  setIsOpen: any;
+  navItems: any;
+  active: string;
+}
+export const MobileNavbar = ({
+  isOpen,
+  setIsOpen,
+  navItems,
+  active,
+}: IProps) => {
   return (
     <div className="block lg:hidden z-50">
       {/* Menu Button */}

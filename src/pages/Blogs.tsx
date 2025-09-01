@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router";
 import blogsData from "../data/blogs.json";
 import { BsArrowLeft } from "react-icons/bs";
-
+import Markdown from "react-markdown";
 export default function BlogsPage() {
   const { slug } = useParams();
   const blog = blogsData.find((b) => b.slug === slug);
@@ -22,7 +22,9 @@ export default function BlogsPage() {
       {blog.sections.map((section, index) => (
         <div key={index} className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">{section.subtitle}</h2>
-          <p className="text-gray-300">{section.content}</p>
+          <div className="prose prose-invert text-gray-300 ">
+            <Markdown>{section.content}</Markdown>
+          </div>
         </div>
       ))}
     </section>
