@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import {
   LuMail,
@@ -13,13 +13,14 @@ import {
 const Footer = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
   return (
     <footer
+      id="contact"
       ref={ref}
       className="relative bg-black text-white px-6 py-16 lg:px-24 overflow-hidden"
     >

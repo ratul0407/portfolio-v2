@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import { Link } from "react-router";
 import plantlifeImg from "../assets/images/plantlife.png";
 import parcelImg from "../assets/images/parcel.png";
@@ -32,7 +32,7 @@ const projects = [
   },
 ];
 
-const fadeIn = (direction: "left" | "right") => {
+const fadeIn = (direction: "left" | "right"): Variants => {
   return {
     hidden: { opacity: 0, x: direction === "left" ? -80 : 80 },
     show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
@@ -91,15 +91,15 @@ export default function ProjectsSection() {
                       View Details
                     </button>
                   </Link>
-                  <a
-                    href={project.liveLink}
+                  <Link
+                    to={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <button className="px-5 py-2 rounded-xl border border-gray-400 hover:bg-gray-800 transition ">
                       <RiExternalLinkFill />
                     </button>
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             </motion.div>

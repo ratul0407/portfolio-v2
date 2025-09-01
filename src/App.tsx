@@ -27,6 +27,7 @@ function App() {
       <AnimatePresence>{isLoading && <Preloader />}</AnimatePresence>
       <ScrollIndicator />
       <Navbar />
+
       <div className="min-h-screen w-full bg-black relative">
         {/* Vercel Grid */}
         <div
