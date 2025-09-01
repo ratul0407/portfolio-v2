@@ -1,13 +1,29 @@
+import { useEffect, useState } from "react";
 import About from "./components/About";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import ScrollIndicator from "./components/ScrollIndicator";
 import Skills from "./components/Skills";
+import { AnimatePresence } from "motion/react";
+import Preloader from "./components/preloader/PreLoader";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      setTimeout(() => {
+        setIsLoading(false);
+        document.body.style.cursor = "default";
+        window.scrollTo(0, 0);
+      }, 2000);
+    })();
+  }, []);
+
   return (
     <div>
+      <AnimatePresence>{isLoading && <Preloader />}</AnimatePresence>
       <ScrollIndicator />
       <Navbar />
       <div className="min-h-screen w-full bg-black relative">
