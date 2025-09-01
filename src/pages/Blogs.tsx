@@ -22,7 +22,7 @@ export default function BlogsPage() {
       {blog.sections.map((section, index) => (
         <div key={index} className="mb-8">
           <h2 className="text-2xl font-semibold mb-2">{section.subtitle}</h2>
-          <div className="prose prose-invert text-gray-300 ">
+          <div className="prose prose-invert text-gray-300 max-w-none break-words whitespace-pre-wrap overflow-scroll">
             <Markdown>{section.content}</Markdown>
           </div>
         </div>

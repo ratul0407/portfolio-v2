@@ -53,7 +53,7 @@ export const MobileNavbar = ({
 
               {/* Nav Links */}
               <ul className="flex flex-col gap-6 text-lg">
-                {navItems.map((item) => (
+                {navItems.map((item: any) => (
                   <li key={item.path}>
                     <a
                       href={`#${item.path}`}

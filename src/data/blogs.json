@@ -57,7 +57,7 @@
       },
       {
         "subtitle": "Creating a Promise",
-        "content": "You can create a Promise using the `Promise` constructor, which takes a function with `resolve` and `reject` parameters:\n\n```javascript\nconst myPromise = new Promise((resolve, reject) => {\n  setTimeout(() => {\n    const success = true; // Simulate async operation\n    if (success) {\n      resolve('Operation successful!');\n    } else {\n      reject('Operation failed!');\n    }\n  }, 2000);\n});\n```\n\nThis creates a Promise that resolves or rejects after 2 seconds. Use it in your React app to handle asynchronous tasks, like loading data for your portfolio's project section.\n\n[Image Placeholder: Code editor screenshot showing Promise creation]"
+        "content": "You can create a Promise using the `Promise` constructor, which takes a function with `resolve` and `reject` parameters:\n\n```javascript\nconst myPromise = new Promise((resolve, reject) => {\n  setTimeout(() => {\n    const success = true; //\n Simulate async operation\n    if (success) {\n      resolve('Operation successful!');\n    } else {\n      reject('Operation failed!');\n    }\n  }, 2000);\n});\n```\n\nThis creates a Promise that resolves or rejects after 2 seconds. Use it in your React app to handle asynchronous tasks, like loading data for your portfolio's project section.\n\n[Image Placeholder: Code editor screenshot showing Promise creation]"
       },
       {
         "subtitle": "Handling Promises",
