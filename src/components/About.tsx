@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import myImage from "../assets/images/my-img.jpg";
+import { Link } from "react-router";
 export default function About() {
   const container = {
     hidden: {},
@@ -77,6 +78,14 @@ export default function About() {
             "Beyond coding, I enjoy gaming, reading, and exploring new
             technologies that push the web forward.",
           </motion.p>
+          <motion.button className="px-2 py-1 rounded-sm bg-white text-black hover:bg-white/50 cursor-pointer">
+            <Link
+              target="_blank"
+              to="https://drive.google.com/file/d/172iNmC0ewxu2IgVfkSMeaXKPtilqlUfq/view?ths=true"
+            >
+              Resume
+            </Link>
+          </motion.button>
         </div>
 
         {/* RIGHT: Image */}

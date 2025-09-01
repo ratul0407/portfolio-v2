@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { motion, type Variants } from "motion/react";
 import { useInView } from "react-intersection-observer";
+import emailjs from "@emailjs/browser";
 import {
   LuMail,
   LuPhone,
@@ -9,6 +11,8 @@ import {
   LuLinkedin,
   LuTwitter,
 } from "react-icons/lu";
+import { useRef } from "react";
+import { toast } from "sonner";
 
 const Footer = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -17,7 +21,30 @@ const Footer = () => {
     hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
+  const form = useRef<HTMLFormElement>(null);
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAIL_SERVICE_ID,
+        import.meta.env.VITE_EMAIL_TEMPLATE_ID,
+        form.current!,
+        {
+          publicKey: import.meta.env.VITE_EMAIL_PUBLIC_KEY,
+        }
+      )
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          toast.success("Thanks for sending an email");
+        },
+        () => {
+          toast.success("Thanks for sending an email");
+        }
+      );
 
+    e.target.reset();
+  };
   return (
     <footer
       id="contact"
@@ -42,20 +69,28 @@ const Footer = () => {
         </p>
 
         {/* Form */}
-        <motion.form variants={fadeUp} className="space-y-6 text-left">
+        <motion.form
+          ref={form}
+          onSubmit={handleSubmit}
+          variants={fadeUp}
+          className="space-y-6 text-left"
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <input
               type="text"
+              name="form_name"
               placeholder="Your Name"
               className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
             <input
+              name="form_email"
               type="email"
               placeholder="Your Email"
               className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
           </div>
           <textarea
+            name="message"
             placeholder="Your Message"
             rows={5}
             className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"

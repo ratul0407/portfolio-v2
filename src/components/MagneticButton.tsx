@@ -15,7 +15,6 @@ const MagneticButton = ({ children }: { children: React.ReactNode }) => {
     setPosition({ x, y });
   };
 
-  console.log(position);
   const onMouseLeave = () => {
     setPosition({ x: 0, y: 0 });
   };

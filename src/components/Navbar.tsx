@@ -1,32 +1,33 @@
 import MagneticButton from "./MagneticButton";
+import { MobileNavbar } from "./MobileNavbar";
 import "./navbar.css";
 import { useEffect, useState } from "react";
-import { IoMenu } from "react-icons/io5";
+
+const navItems = [
+  {
+    label: "Home",
+    path: "home",
+  },
+  {
+    label: "About",
+    path: "about",
+  },
+  {
+    label: "Skills",
+    path: "skills",
+  },
+  {
+    label: "Projects",
+    path: "projects",
+  },
+  {
+    label: "Contact",
+    path: "contact",
+  },
+];
 const Navbar = () => {
   const [active, setActive] = useState("home");
-  const navItems = [
-    {
-      label: "Home",
-      path: "home",
-    },
-    {
-      label: "About",
-      path: "about",
-    },
-    {
-      label: "Skills",
-      path: "skills",
-    },
-    {
-      label: "Projects",
-      path: "projects",
-    },
-    {
-      label: "Contact",
-      path: "contact",
-    },
-  ];
-
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -61,11 +62,16 @@ const Navbar = () => {
 
   return (
     <div className="sticky  top-0 flex justify-between text-white z-50 h-0 ">
-      <div className="p-12 flex items-center justify-between min-w-full bg-gray-50/10 backdrop-blur-sm">
+      <div className="p-12 flex items-center justify-between min-w-full ">
         <p>Ratul</p>
-        <div className="block lg:hidden z-50">
-          <IoMenu />
-        </div>
+        {/* mobile nav */}
+        <MobileNavbar
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          navItems={navItems}
+          active={active}
+        />
+
         <div className="hidden lg:block z-50 ">
           <ul className="flex items-center gap-6">
             {navItems.map((item) => (

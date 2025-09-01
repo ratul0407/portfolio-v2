@@ -1,0 +1,96 @@
+[
+  {
+    "id": 1,
+    "title": "PlantLife",
+    "subtitle": "E-commerce for houseplants",
+    "stacks": [
+      "React",
+      "Node.js",
+      "TypeScript",
+      "Express",
+      "MongoDB",
+      "TailwindCSS",
+      "GSAP",
+      "Framer Motion"
+    ],
+    "overview": "PlantLife is a modern e-commerce platform to discover and purchase houseplants with care tips.",
+    "features": [
+      "Product search and filtering",
+      "User accounts and orders tracking",
+      "Secure payment gateway integration",
+      "Responsive mobile-first design"
+    ],
+    "challenges": [
+      "Custom ui blocks for the website",
+      "Implementing smooth animations for product cards",
+      "Animating everything according to my need was a big challenge"
+    ],
+    "futureFeatures": [
+      "Wishlist and favorites",
+      "AI-based plant recommendations",
+      "Subscription for plant care kits"
+    ],
+    "live-site": "https://rplantlife.netlify.app",
+    "github": "https://github.com/ratul0407/plantlife-client"
+  },
+  {
+    "id": 2,
+    "title": "EParcel",
+    "subtitle": "A Parcel sending application that get's things done",
+    "stacks": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "TailwindCSS",
+      "Express",
+      "Framer Motion",
+      "redux"
+    ],
+    "overview": "E Parcel is a react based application for fast delivery sending platform using which users can create , send and receiver parcels.",
+    "features": [
+      "Google authentication",
+      "Beautiful Layout using shadcn",
+      "Role based authentication",
+      "Custom made charts for better user experience"
+    ],
+    "challenges": [
+      "Cookie based authentication",
+      "Complex layout design",
+      "Dashboard for better user management"
+    ],
+    "futureFeatures": [
+      "More robust ui",
+      "Implementing a map so that it is easier to send location",
+      "More features for admin to create and update data"
+    ],
+    "live-site": "https://parcel-delivery-frontend.vercel.app/",
+    "github": "https://github.com/ratul0407/Level-2-A6"
+  },
+  {
+    "id": 3,
+    "title": "Study Collab",
+    "subtitle": "A Course selling platform",
+    "stacks": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "TailwindCSS",
+      "Daisy UI",
+      "Express"
+    ],
+    "overview": "Study House is a study platform where teachers can upload sessions and materials for students to access.",
+    "features": [
+      "User authentication with Firebase",
+      "Secure Payments: Integrated with Stripe for handling payments.",
+      "Admin Panel: Manage all sessions and materials, including price adjustments.",
+      "Responsive and animated UI"
+    ],
+    "challenges": [
+      "Managing complex state with TanStack Query",
+      "Designing multiple pages while keeping track of things"
+    ],
+    "futureFeatures": ["Dark mode toggle", "Admin dashboard for moderation"],
+    "live-site": "https://bistro-boss-86657.web.app/",
+    "github": "https://github.com/ratul0407/collab-study-client"
+  }
+]

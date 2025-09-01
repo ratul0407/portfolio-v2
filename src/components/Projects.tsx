@@ -2,8 +2,8 @@
 import { motion, type Variants } from "motion/react";
 import { Link } from "react-router";
 import plantlifeImg from "../assets/images/plantlife.png";
-import parcelImg from "../assets/images/parcel.png";
-import demoImg from "../assets/images/demo.png";
+import parcelImg from "../assets/images/Eparcel.png";
+import studyCollab from "../assets/images/collabStudy.png";
 import { RiExternalLinkFill } from "react-icons/ri";
 const projects = [
   {
@@ -26,7 +26,7 @@ const projects = [
     id: 3,
     title: "Study Collab",
     description: "A course selling platform.",
-    image: demoImg,
+    image: studyCollab,
     liveLink: "https://example.com/project3",
     detailsLink: "/projects/3",
   },
